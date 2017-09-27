@@ -11,17 +11,23 @@ def main():
         album_id = int(request.form['album_id'])
         global store_id
         store_id=album_id
-        input_image,input_text,output_image,output_text=get_stories(album_id)
+        try:
+            input_image,input_text,output_image,output_text=get_stories(album_id,shuffle=True)
+        except:
+            return render_template('error.html')
         return render_template('index.html',sorted_image=output_image,sorted_text=output_text,shuffled_image=input_image,shuffled_text=input_text)
     else:
         input_image,input_text,output_image,output_text=get_stories(Random=True)
-        return render_template('index.html',sorted_image=input_image,sorted_text=input_text,shuffled_image=output_image,shuffled_text=output_text)
+        return render_template('index.html',sorted_image=output_image,sorted_text=output_text,shuffled_image=input_image,shuffled_text=input_text)
 
 @app.route("/shuffle",methods=['POST'])
 
 def shuffle():
     album_id = store_id
-    input_image,input_text,output_image,output_text=get_stories(album_id,shuffle=True)
+    try:
+        input_image,input_text,output_image,output_text=get_stories(album_id,shuffle=True)
+    except:
+        return render_template('error.html')
     return render_template('index.html',sorted_image=output_image,sorted_text=output_text,shuffled_image=input_image,shuffled_text=input_text)
     
 
@@ -29,7 +35,10 @@ def shuffle():
 
 def arrange():
     album_id = store_id
-    input_image,input_text,output_image,output_text=get_stories(album_id,shuffle=False)
+    try:
+        input_image,input_text,output_image,output_text=get_stories(album_id,shuffle=False)
+    except:
+        return render_tempalte('error.html')
     return render_template('index.html',sorted_image=output_image,sorted_text=output_text,shuffled_image=input_image,shuffled_text=input_text)
     
 

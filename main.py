@@ -37,13 +37,15 @@ def get_stories(index=None, Random=False,shuffle=False):
         random.shuffle(input_index)
     for i in input_index:
         img.append(get_list[i]['url'])
-        text.append(get_list[i]['text'])
+        text.append(str(i+1)+") "+get_list[i]['text'])
     m_index=[m-1 for m in m_index]
     t_index=[m-1 for m in t_index]
     v_index=[m-1 for m in v_index]
+    print t_index
+    print v_index
     for i in m_index:
         output_image.append(get_list[i]['url'])
-        output_text.append(get_list[i]['text'])
+        output_text.append(str(i+1)+") "+get_list[i]['text'])
     return img,text,output_image,output_text
 
 def get_random(id):
@@ -63,6 +65,6 @@ def get_random(id):
     #random.shuffle(input_index)
     for i in input_index:
         input_img.append(get_list[i]['url'])
-        input_text.append(get_list[i]['text'])
+        input_text.append(str(i+1)+") "+get_list[i]['text'])
         
     return input_img,input_text,img,text
