@@ -1,4 +1,4 @@
-# FlaskIntegration-SortyTeller
+# SortyTeller
 
 Sorting images in an album is an interesting task in computer vision and machine learning. It allows us to build systems that can generalize and exploit the temporal relationship between images. We propose an approach to this problem taking into account and using a latent representation of the input (shuffled) sequence, which uses Pointer Network (ptrNet) to utilize the whole contextual information to perform story ordering/sorting. We display the effectiveness of this model through various experiments.
 
@@ -15,7 +15,7 @@ The report to this project can be found here: [Full report](http://www.cs.virgin
  We have used the [VIST dataset](http://visionandlanguage.net/VIST/) to train our images. 
  
 The implementation for this project is two-fold:
-- The backend code for pointer networks can be found [here] (https://github.com/maximus009/StorySorter) . 
+- The backend code for pointer networks can be found [here](https://github.com/maximus009/StorySorter) . 
 - The code for the webUI is in this repository.
 
 ## Serving the appliation in Flask
