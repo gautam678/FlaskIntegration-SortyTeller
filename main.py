@@ -5,7 +5,7 @@ import numpy as np
 from time import sleep
 
 script_dir = os.path.dirname(__file__)
-rel_path = "pred_file.json"
+rel_path = "feed_files/pred_file.json"
 abs_file_path = os.path.join(script_dir, rel_path)
 data=json.load(open(abs_file_path))
 
