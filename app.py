@@ -38,7 +38,7 @@ def arrange():
     try:
         input_image,input_text,output_image,output_text=get_stories(album_id,shuffle=False)
     except:
-        return render_tempalte('error.html')
+        return render_template('error.html')
     return render_template('index.html',sorted_image=output_image,sorted_text=output_text,shuffled_image=input_image,shuffled_text=input_text)
     
 
